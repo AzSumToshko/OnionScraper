@@ -139,7 +139,7 @@ def parse_post(html, url, brand, model):
     post_number = ""
     location = ""
     current_price = ""
-    price_history = []
+    # price_history = []
 
     images = []
     car_params = {}
@@ -171,14 +171,15 @@ def parse_post(html, url, brand, model):
         price_text = price_div.text.strip().split("\n")[0]
         current_price = price_text
 
-    price_history_div = right.select_one(".priceHistory statistiki")
-    if price_history_div:
-        price_entries = price_history_div.find_all("div")
-        for i in range(3, len(price_entries), 3):
-            date = price_entries[i].text.strip()
-            change = price_entries[i + 1].text.strip()
-            price = price_entries[i + 2].text.strip()
-            price_history.append({"date": date, "change": change, "price": price})
+    # # TBD: This here is not working since i have to click on the span inside the price_div but soup does not pprovide such functionality
+    # price_history_div = right.select_one(".priceHistory statistiki")
+    # if price_history_div:
+    #     price_entries = price_history_div.find_all("div")
+    #     for i in range(3, len(price_entries), 3):
+    #         date = price_entries[i].text.strip()
+    #         change = price_entries[i + 1].text.strip()
+    #         price = price_entries[i + 2].text.strip()
+    #         price_history.append({"date": date, "change": change, "price": price})
 
 
     # Stuff from left
@@ -228,7 +229,7 @@ def parse_post(html, url, brand, model):
         "post_number": post_number,
         "location": location,
         "current_price": current_price,
-        "price_history": price_history,
+        # "price_history": price_history,
         "images": images,
         "car_parameters": car_params,
         "technical_data": technical_data,

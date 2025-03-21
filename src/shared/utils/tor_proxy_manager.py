@@ -6,7 +6,7 @@ from stem import Signal
 from stem.control import Controller
 
 from config import TOR_PATH, TOR_IP_CHECKER_URL, TOR_CONTROL_PORT, TOR_PROXIES, TOR_PORT
-from src.shared.logger_service import LoggingService
+from src.shared.service.logger_service import LoggingService
 
 logger = LoggingService().initialize_logger()
 

@@ -2,7 +2,7 @@ import subprocess
 import time
 
 from config import NYM_CLIENT_PATH, NYM_CLIENT_ID, NYM_USE_REPLY_SUBS, NYM_CLIENT_PORT, NYM_CLIENT_PROVIDER
-from src.shared.logger_service import LoggingService
+from src.shared.service.logger_service import LoggingService
 
 logger = LoggingService().initialize_logger()
 

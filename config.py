@@ -2,11 +2,12 @@ import os
 
 # General
 NUM_WORKERS = 8  # Number of parallel processes (based on your CPU threads)
+BATCH_SIZE = 100
 DEFAULT_RETRIES = 3
-NUM_TOR_INSTANCES = 10
 CHROME_DEBUG_PORT = 9222
 LOGGING_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
 BASE_URL = "https://www.mobile.bg/obiavi/avtomobili-dzhipove/namira-se-v-balgariya"
+DB_TIMEOUT=5
 
 # Paths
 SCREENSHOTS_FOLDER = "debug/screenshots"
@@ -21,6 +22,7 @@ JS_SCROLL_TO_BOTTOM_SCRIPT = "window.scrollTo(0, document.body.scrollHeight);"
 JS_SCROLL_TO_TOP_SCRIPT = "window.scrollTo(0, 0);"
 
 # Tor Settings
+NUM_TOR_INSTANCES = 10 # NOT IMPLEMENTED (Also it may be not necessary since single instance is working fine with 8 parallel processes)
 TOR_PORT = 9050
 TOR_HOST = "127.0.0.1"
 TOR_CONTROL_PORT = 9051
